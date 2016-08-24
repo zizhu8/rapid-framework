@@ -4,6 +4,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -142,6 +144,10 @@ public class DataSourceProvider {
 		
 		public String toString() {
 			return "DataSource: "+"url="+getUrl()+" username="+getUsername();
+		}
+
+		public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+			return null;
 		}
 	}
 }

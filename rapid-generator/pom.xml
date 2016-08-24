@@ -180,6 +180,7 @@
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 
@@ -270,7 +271,7 @@
 				</executions>					
 			</plugin>
 			
-			<!-- javadoc plugin -->
+			<!-- javadoc plugin 
 			<plugin>
 			  <groupId>org.apache.maven.plugins</groupId>
 			  <artifactId>maven-javadoc-plugin</artifactId>
@@ -289,7 +290,8 @@
 			    </execution>
 			  </executions>
 			  
-			</plugin>				
+			</plugin>		
+			-->		
 
 			<!-- dependency��� -->
 			<plugin>

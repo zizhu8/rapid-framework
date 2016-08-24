@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+    
+    <resultMap id="RM.UserInfo" class="com.zizhu8.project.common.dal.dataobject.UserInfoDO">
+		<result property="userId" column="user_id" javaType="long" jdbcType="BIGINT"  nullValue="0"  />
+		<result property="username" column="username" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="password" column="password" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="birthDate" column="birth_date" javaType="java.util.Date" jdbcType="DATE"  />
+		<result property="sex" column="sex" javaType="int" jdbcType="INTEGER"  nullValue="0"  />
+		<result property="age" column="age" javaType="int" jdbcType="INTEGER"  nullValue="0"  />
+    </resultMap>
+    
+
+	
+	
+    
+	<insert id="UserProject.UserInfo.insert">
+		INSERT INTO USER_INFO (
+	        	USER_ID ,USERNAME ,PASSWORD ,BIRTH_DATE ,SEX ,AGE 
+	        ) VALUES (#userId#,#username#,#password#,#birthDate#,#sex#,#age#)
+		<selectKey resultClass="long" type="post" keyProperty="userId" >
+            select last_insert_id()
+    	</selectKey>        
+	</insert>
+	
+	
+	<delete id="UserProject.UserInfo.delete">
+		DELETE FROM USER_INFO WHERE
+	        USER_ID = #userId#
+    </delete>
+    
+	
+	<update id="UserProject.UserInfo.update">
+		UPDATE USER_INFO SET
+		        USERNAME = #username# ,PASSWORD = #password# ,BIRTH_DATE = #birthDate# ,SEX = #sex# ,AGE = #age# 
+	        WHERE 
+	        	USER_ID = #userId#
+	</update>
+	
+    
+	
+	<select id="UserProject.UserInfo.queryById" resultMap="RM.UserInfo" >
+    	SELECT
+ /*UserProject.UserInfo.queryById*/ 		    USER_ID ,USERNAME ,PASSWORD ,BIRTH_DATE ,SEX ,AGE 
+	        FROM USER_INFO 
+	        WHERE 
+		        USER_ID = #userId#
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="UserProject.UserInfo.queryByUsername" resultMap="RM.UserInfo" >
+    	SELECT  /*UserProject.UserInfo.queryByUsername*/ 
+	    	USER_ID ,USERNAME ,PASSWORD ,BIRTH_DATE ,SEX ,AGE 
+	        FROM USER_INFO where USERNAME = #username#
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="UserProject.UserInfo.queryByAge" resultMap="RM.UserInfo" >
+    	SELECT  /*UserProject.UserInfo.queryByAge*/ 
+	    	USER_ID ,USERNAME ,PASSWORD ,BIRTH_DATE ,SEX ,AGE 
+	        FROM USER_INFO where AGE = #age#
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="UserProject.UserInfo.findPage" resultMap="RM.UserInfo" >
+    	SELECT  /*UserProject.UserInfo.findPage*/ 
+			USER_ID ,USERNAME ,PASSWORD ,BIRTH_DATE ,SEX ,AGE 
+			FROM USER_INFO
+			limit #offset#,#limit#
+	</select>	
+
+	<select id="UserProject.UserInfo.findPage.count" resultClass="long" >
+    	select  /*UserProject.UserInfo.findPage.count*/ count(*) 	FROM USER_INFO
+	</select>
+	    
+	
+	
+    
+
+</sqlMap>
+

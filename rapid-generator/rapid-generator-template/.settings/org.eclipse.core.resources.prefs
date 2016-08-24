@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/generator/template/rapid/clazz/unittest_jmock/${packagePath}/${className}Test.java=GBK
+encoding//src/main/resources/generator/template/rapid/\u6A21\u677F\u76EE\u5F55\u8BF4\u660E.txt=GBK
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

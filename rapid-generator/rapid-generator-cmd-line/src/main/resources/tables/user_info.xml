@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="GBK"?>
+﻿<?xml version="1.0" encoding="GBK"?>
 <!DOCTYPE table SYSTEM "http://sources.alipay.net/svn/dtd/table-config-1.0.dtd">
 
 <table sqlname="USER_INFO">
-	<!-- ����Ҫ���õ�����ɾ��,һ��ֻ��Money���͵�column��Ҫ����: com.iwallet.biz.common.util.money.Money -->
 	
 	<operation name="insert" paramtype="object">
 		<sql>
